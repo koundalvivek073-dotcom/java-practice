@@ -18,7 +18,8 @@ if(ammount<=5000){
         System.out.println("invalid otp");
     }
 }
-}else{System.out.println("Invalid otp");
+}else{
+    System.out.println("Invalid pin");
 
 }
     }
