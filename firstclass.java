@@ -17,6 +17,7 @@ class Firstclass{
                 break;
             case 2:
                 System.out.println("Enter amount");
+                
                 int deposit = sc.nextInt();
                 if(deposit >= 100){
                     balance += deposit;
