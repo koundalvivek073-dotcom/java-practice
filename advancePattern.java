@@ -1,19 +1,30 @@
 import java.util.Scanner;
-class patternpractice {
+class advancePattern {
    public static void main(String[] var0) {
     Scanner sc = new Scanner(System.in);
-int n =6;
-for(int i = 1; i <= 6; i++){
+int n =4;
+for(int i = 1; i <= n; i++){
 for(int j =1; j <= i; j++){
     System.out.print("*");
 }
-for(int j=1; j<= n - i +1; j++){
+for(int j=1; j<=2*(n-i); j++){
     System.out.print(" ");
 }
 for(int j =1; j <= i; j++){
     System.out.print("*");
 }System.out.println();
 }
+for(int i = n; i >=1; i--){
+    for(int j =1; j<= i; j++){
+        System.out.print("*");
+    }
+        for(int j=1; j<=2*(n-i); j++){
+            System.out.print(" ");
+        }
+        for(int j =1; j<=i; j++){
+            System.out.print("*");
+        }System.out.println();
+    }
 }
 }
   
