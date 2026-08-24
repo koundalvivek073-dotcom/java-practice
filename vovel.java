@@ -1,14 +1,16 @@
 import java.util.Scanner;
 class vovel{
-   public static void main(String[] var0) {
-Scanner sc = new Scanner(System.in);
-char input = sc.next().charAt(0);
-if(input == 'a' || input == 'e' || input == 'i' || input == 'o' || input == 'u'){
-    System.out.println("vovel");
-}
-else{System.out.print("conso");
+   public static void main(String[] var0){
+      String str = "hEllo world";
+System.out.print("Vowels in 'hello world': ");
+        for (int i = 0; i < str.length(); i++) {
+            char ch = Character.toLowerCase(str.charAt(i));
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                System.out.print(ch + " ");
+            }
+        }
+    }
 }
 
-}
 
-   }
+   
