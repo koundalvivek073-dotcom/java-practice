@@ -9,7 +9,7 @@ for(int i = 0; i < arr_lenght; i++){
     arr[i] = sc.nextInt();
     }
     int half = sc.nextInt();
-    for(int i =0; i< half; i++){
+    for(int i =0; i< arr_lenght; i++){
         arr[i] = arr[i * 2 + 1];
         arr[i + half] = arr[i*2];
 
