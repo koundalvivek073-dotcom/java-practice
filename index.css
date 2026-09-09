@@ -1,0 +1,19 @@
+.container{
+    border : 2px solid rgb(6, 6, 6);
+    display: grid;
+    grid-template-columns: [c-pehla] 60px [c-dusra] 50px;
+    grid-template-rows: [r-pehla] 50px [r-dusra] 50px [r-teesr] 50px [r-choutha] 50px;
+}
+.item-1{ 
+    grid-column: c-pehla/c-dusra; ;
+    grid-row: r-pehla/r-dusra;
+}
+.item-4{ 
+    grid-column: c-pehla/c-dusra;
+    grid-row: r-teesr/r-choutha;
+}
+.item{
+    border : 2px solid rgb(241, 14, 14);
+    width : 50px;
+    height : 50px;
+}
