@@ -1,0 +1,213 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.22), transparent 28%),
+    linear-gradient(135deg, #020617 0%, #111827 45%, #1e293b 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f8fafc;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: auto auto -10% -8%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.18), transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.container {
+  width: min(900px, 100%);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-shadow: 0 0 18px rgba(56, 189, 248, 0.3);
+}
+
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #cbd5e1;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.feature-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  color: #f8fafc;
+  padding: 1.2rem;
+  min-height: 170px;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease, background 0.26s ease;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.12) 50%, transparent 80%);
+  transform: translateX(-120%);
+  transition: transform 0.5s ease;
+}
+
+.feature-card:hover {
+  transform: perspective(800px) rotateX(-7deg) rotateY(7deg) translateY(-8px);
+  box-shadow: 0 24px 50px rgba(34, 211, 238, 0.18);
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
+.feature-card:hover::before {
+  transform: translateX(120%);
+}
+
+.feature-card:active {
+  transform: perspective(800px) scale(0.98);
+}
+
+.exit-card {
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.icon {
+  font-size: 1.8rem;
+  display: inline-block;
+  transform: translateZ(12px);
+}
+
+.feature-card h3 {
+  margin: 0.6rem 0 0.35rem;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.78);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  position: relative;
+  width: min(460px, 100%);
+  background: linear-gradient(145deg, #334155, #0f172a);
+  border-radius: 24px;
+  padding: 1.4rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transform: translateY(10px) scale(0.97);
+  transition: transform 0.22s ease;
+}
+
+.modal-overlay.show .modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.modal-box p,
+.modal-box label {
+  color: #e2e8f0;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #64748b;
+  margin-top: 0.4rem;
+  margin-bottom: 0.9rem;
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+button.submit-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button.submit-btn:hover {
+  background: #1d4ed8;
+}
+
+.result-box {
+  background: rgba(15, 23, 42, 0.68);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 0.7rem;
+}
+
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
